@@ -26,8 +26,6 @@ function exibirConsumoMemoria(consumo){
     const rssMB = (memoria.rss / 1024 / 1024). toFixed(2);
     const heapMB = (memoria.heapUsed / 1024 / 1024).toFixed(2);
 
-    console.log(`[${consumo}] RSS: ${rssMB} MB | Heap Utilizado: ${headMB} MB`);
+    console.log(`[${consumo}] RSS: ${rssMB} MB | Heap Utilizado: ${heapMB} MB`);
 }
 filtrarErros();
-
-
