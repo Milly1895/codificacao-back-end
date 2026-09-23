@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule, ObserveInstrument } from './app.module.js';
+import { AppModule} from './app.module.js';
 import { join } from 'path';
 import { NestExpressApplication } from '@nestjs/platform-express';
 
@@ -11,4 +11,4 @@ async function bootstrap() {
   await app.listen(3000);
   console.log('Aplicação rodando em http://localhost:3000');
 }
-await bootstrap();
+bootstrap();
