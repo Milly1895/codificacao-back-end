@@ -12,7 +12,7 @@ export default async function handler(req: Request) {
             mensagem: 'Função executada com sucesso!',
             horarioServidor: new Date().toLocaleDateString('pt-BR'),
             regiao: regiao,
-            tempoExecução: `${Date.now()} - inicio} ms`,
+            tempoExecução: `${Date.now() - inicio} ms`,
         }),
         {
             status: 200,
