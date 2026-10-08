@@ -3,11 +3,17 @@ Projeto desenvolvido em sala de aula utilizando NestJS, TypeScript e Node.js, co
 
 ## Conteúdos trabalhados
 Durante a aula foram estudados os conceitos de Module, Controller e Service, além de injeção de dependências, criação de rotas HTTP, parâmetros de URL, tratamento de erros e utilização de logs.
+
 O AppModule é o módulo principal da aplicação e registra os controllers e services utilizados no projeto. O AppController possui a rota /status, responsável por verificar se o servidor está ativo.
+
 A aplicação também possui uma estrutura para gerenciamento de produtos. O ProdutosService mantém uma lista de produtos em memória e disponibiliza o método listarProdutos() para retornar esses dados.
-O ProdutosController é responsável pelas requisições relacionadas aos produtos. Foi criada uma rota para buscar um produto pelo seu ID:
+
+O ProdutosController é responsável pelas requisições relacionadas aos produtos. 
+Foi criada uma rota para buscar um produto pelo seu ID:
 GET /produtos/:id
+
 O ID recebido pela URL é convertido de texto para número. Caso seja informado um valor inválido, como /produtos/abc, a aplicação utiliza BadRequestException e retorna um erro HTTP 400.
+
 Quando o ID é válido, o sistema procura o produto na lista. Caso o produto não exista, é utilizada a NotFoundException, retornando um erro HTTP 404.
 Também foi utilizado o Logger do NestJS para registrar situações importantes, como tentativas de consulta com ID inválido ou produtos que não foram encontrados.
 
