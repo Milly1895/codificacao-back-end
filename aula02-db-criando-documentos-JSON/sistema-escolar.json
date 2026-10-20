@@ -1,0 +1,30 @@
+{
+   "sistema":"Escolar",
+   "EntidadeChaves":[
+    "aluno",
+    "gestoes pedagogicas",
+    "profissionais da educacao"
+   ],
+   "mapeamentoEscolar":[
+    "nome",
+    "data de nascimento",
+    "email",
+    "endereco",
+    "numero de telefone dos pais responsaveis"
+   ],
+   "disciplinas":[
+    "Matemática",
+    "Português",
+    "História",
+    "Geografia",
+    "Inglês",
+    "Ciência",
+    "Ensino religioso",
+    "Educacao física"
+   ],
+   "justicativa:":[
+    {
+        "texto": "Separar alunos,disciplina e turma em coleção.Facilita a organização,evita a duplicação de dados."
+    }
+   ]
+}    
