@@ -110,7 +110,7 @@ export class AlunoController {
         @Query('limit', new DefaultValuePipe(10), ParseIntPipe)limit: number,
         @Query('nome') nome?: string,
         @Query('curso') curso?: string,
-        @Query('orderby') orderby?: string,
+        @Query('orderBy') orderBy?: string,
         @Query('orderDirection') orderDirection?: 'asc' | 'desc'
     )
     {
@@ -119,7 +119,7 @@ export class AlunoController {
             limit,
             nome,
             curso,
-            orderby, 
+            orderBy, 
             orderDirection);
      }
     @Get(':id')
