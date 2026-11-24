@@ -34,7 +34,7 @@ async function bootstrap() {
   await app.listen(process.env.PORT ?? 3000);
   Logger.log(`API escola rodando na porta ${await app.getUrl()}`,'Port');
   loggerDatabase.log(`Conectado em: ${configDb.uri}`);
-  loggerDatabase.log(`Pool Máximo: ${configDb.maxPoolSize}`);
+  loggerDatabase.log(`Pool Máximo: ${configDb.maxPollSize}`);
   loggerAuth.log(`Chave secreta "que não é Mais secreta: "${configAuth.jwtSecret}`);
   loggerAuth.log(`Tempo de Validade da Chave ${configAuth.jwtExpiresIn}`);
 
