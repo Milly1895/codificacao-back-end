@@ -1,4 +1,5 @@
 import { Injectable,
+     Inject,
      NotFoundException, 
      ConflictException,
      InternalServerErrorException,
@@ -9,12 +10,23 @@ import{MongoServerError} from 'mongodb';
 import { CreateAlunoDto } from "./dto/create-aluno.dto.js";
 import { UpdateAlunoDto } from "./dto/update-aluno.dto.js";
 import { Aluno, AlunoDocument } from "./schemas/aluno.schema.js";
-
-
+import { ConfigService } from "@nestjs/config";
+import { variaveisAmbiente } from "../config/env.config.js";
+import type { ConfigType } from "@nestjs/config";
+import databaseConfig from "../config/database.config.js";
 
 @Injectable()
 export class AlunoService{
-    constructor(@InjectModel(Aluno.name) private alunoModel: Model<AlunoDocument>){}
+    constructor(@InjectModel(Aluno.name) private alunoModel: Model<AlunoDocument>,
+    private readonly configService: ConfigService<variaveisAmbiente, true>,
+    @Inject(databaseConfig.KEY) private dbconfig: ConfigType<typeof databaseConfig>){}
+
+    configVariaveis(){
+        const nodeEnv= this.configService.get('NODE_ENV',{ infer:true});
+        const port = this.configService.get('PORT', {infer:true});
+        const mongoUri = this.configService.get('MONGO_URI', {infer:true});
+        const jwtSecret = this.configService.get('JWT_SECRET', {infer:true});
+    }
 
     async create(createAlunoDto : CreateAlunoDto):Promise<Aluno>{
 
